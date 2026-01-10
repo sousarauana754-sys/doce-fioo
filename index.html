@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doce Fio | Crochê Artesanal</title>
+<link href="https://fonts.googleapis.com/css2?
+family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap"
+rel="stylesheet">
+<style>
+:root{
+ --bg:#f8f5f1;
+ --card:#ffffff;
+ --gold:#c7a24d;
+ --text:#4a3f35;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+ font-family:'Poppins',sans-serif;
+ background:var(--bg);
+ color:var(--text);
+}
+header{
+ background:var(--card);
+ padding:30px 20px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ max-width:1200px;
+ margin:auto;
+}
+header h1{
+ font-family:'Playfair Display',serif;
+ color:var(--gold);
+}
+nav a{
+ margin-left:15px;
+ text-decoration:none;
+ color:var(--text);
+ font-weight:500;
+}
+nav a:hover{color:var(--gold)}
+.hero{
+ text-align:center;
+ padding:80px 20px;
+ background:var(--card);
+}
+.hero h2{
+ font-family:'Playfair Display',serif;
+ color:var(--gold);
+ font-size:2.5rem;
+}
+.hero p{margin:15px 0 30px}
+.btn{
+ background:var(--gold);
+ color:white;
+ padding:12px 30px;
+ border-radius:30px;
+ text-decoration:none;
+ border:none;
+ cursor:pointer;
+}
+section{
+ max-width:1200px;
+ margin:auto;
+ padding:70px 20px;
+}
+h3.section-title{
+ text-align:center;
+ font-family:'Playfair Display',serif;
+ color:var(--gold);
+ font-size:2.2rem;
+ margin-bottom:50px;
+}
+/* GRID */
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+ gap:25px;
+}
+.card{
+ background:var(--card);
+ border-radius:25px;
+ overflow:hidden;
+ box-shadow:0 10px 30px rgba(0,0,0,.05);
+ text-align:center;
+}
+.card img{
+ width:100%;
+ height:220px;
+ object-fit:cover;
+}
+.card div{padding:20px}
+.price{font-weight:600;margin:10px 0}
+/* FORM */
+form{
+ max-width:500px;
+ margin:auto;
+}
+input,textarea,select{
+ width:100%;
+ padding:12px;
+ margin-bottom:15px;
+ border-radius:10px;
+ border:1px solid #ddd;
+}
+textarea{resize:none;height:120px}
+footer{
+ text-align:center;
+ padding:30px;
+ font-size:.9rem;
+ opacity:.8;
+}
+/* SPA */
+.page{display:none}
+.page.active{display:block}
+</style>
+</head>
+<body>
+<header>
+ <h1>Doce Fio</h1>
+ <nav>
+ <a onclick="showPage('home')">Início</a>
+ <a onclick="showPage('bolsas')">Bolsas</a>
+ <a onclick="showPage('roupas')">Roupas</a>
+ <a onclick="showPage('tapetes')">Tapetes</a>
+ <a onclick="showPage('sousplats')">Sousplats</a>
+ <a onclick="showPage('personalizados')">Personalizados</a>
+ <a onclick="showPage('encomendas')">Encomendas</a>
+ </nav>
+</header>
+<!-- HOME -->
+<div id="home" class="page active">
+ <div class="hero">
+ <h2>Crochê feito à mão</h2>
+ <p>Delicadeza, autenticidade e carinho em cada fio.</p>
+ <button class="btn" onclick="showPage('encomendas')">Fazer encomenda</button>
+ </div>
+</div>
+<!-- CATEGORIAS -->
+<div id="bolsas" class="page">
+<section>
+<h3 class="section-title">Bolsas</h3>
+<div class="grid">
+ <div class="card">
+ <img src="https://via.placeholder.com/600x600?text=Bolsa">
+ <div>
+ <h4>Bolsa em Crochê</h4>
+ <div class="price">R$ 120,00</div>
+ <button class="btn" onclick="showPage('encomendas')">Encomendar</button>
+ </div>
+ </div>
+</div>
+</section>
+</div>
+<div id="roupas" class="page">
+<section>
+<h3 class="section-title">Roupas</h3>
+<div class="grid">
+ <div class="card">
+ <img src="https://via.placeholder.com/600x600?text=Cropped">
+ <div>
+ <h4>Cropped em Crochê</h4>
+ <div class="price">R$ 85,00</div>
+ <button class="btn" onclick="showPage('encomendas')">Encomendar</button>
+ </div>
+ </div>
+</div>
+</section>
+</div>
+<div id="tapetes" class="page">
+<section>
+<h3 class="section-title">Tapetes</h3>
+<div class="grid">
+ <div class="card">
+ <img src="https://via.placeholder.com/600x600?text=Tapete">
+ <div>
+ <h4>Tapete Artesanal</h4>
+ <div class="price">R$ 90,00</div>
+ <button class="btn" onclick="showPage('encomendas')">Encomendar</button>
+ </div>
+ </div>
+</div>
+</section>
+</div>
+<div id="sousplats" class="page">
+<section>
+<h3 class="section-title">Sousplats</h3>
+<div class="grid">
+ <div class="card">
+ <img src="https://via.placeholder.com/600x600?text=Sousplat">
+ <div>
+ <h4>Sousplat</h4>
+ <div class="price">R$ 35,00</div>
+ <button class="btn" onclick="showPage('encomendas')">Encomendar</button>
+ </div>
+ </div>
+</div>
+</section>
+</div>
+<div id="personalizados" class="page">
+<section>
+<h3 class="section-title">Personalizados</h3>
+<p style="text-align:center">Peças feitas do seu jeito, cores e tamanhos personalizados.</p>
+</section>
+</div>
+<!-- ENCOMENDAS -->
+<div id="encomendas" class="page">
+<section>
+<h3 class="section-title">Encomendas</h3>
+<form onsubmit="sendWhats(event)">
+ <input id="nome" placeholder="Seu nome" required>
+ <select id="produto">
+ <option>Bolsas</option>
+ <option>Roupas</option>
+ <option>Tapetes</option>
+ <option>Sousplats</option>
+ <option>Personalizados</option>
+ </select>
+ <textarea id="msg" placeholder="Detalhes do pedido"></textarea>
+ <button class="btn" type="submit">Enviar pedido</button>
+</form>
+</section>
+</div>
+<footer>
+📍 Buriti Bravo – MA • Instagram: @_doce.fio <br>
+© Doce Fio – Crochê Artesanal
+</footer>
+<script>
+function showPage(id){
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+}
+function sendWhats(e){
+ e.preventDefault();
+ const nome=document.getElementById('nome').value;
+ const produto=document.getElementById('produto').value;
+ const msg=document.getElementById('msg').value;
+ const texto=`Olá, meu nome é ${nome}. Quero encomendar: ${produto}. Detalhes: ${msg}`;
+ window.open(`https://wa.me/5599985509769?text=${encodeURIComponent(texto)}`);
+}
+</script>
+</body>
+</html>
