@@ -20,6 +20,7 @@ body{
  background:var(--bg);
  color:var(--text);
 }
+/* HEADER */
 header{
  background:var(--card);
  padding:30px 20px;
@@ -28,18 +29,37 @@ header{
  align-items:center;
  max-width:1200px;
  margin:auto;
+ flex-wrap: wrap;
 }
 header h1{
  font-family:'Playfair Display',serif;
  color:var(--gold);
 }
-nav a{
- margin-left:15px;
- text-decoration:none;
- color:var(--text);
- font-weight:500;
+/* BOTÕES DO MENU */
+nav{
+ display:flex;
+ gap:10px;
+ flex-wrap: wrap;
+ justify-content:center;
 }
-nav a:hover{color:var(--gold)}
+nav a{
+ text-decoration:none;
+ background:var(--bg);
+ color:var(--text);
+ padding:10px 18px;
+ border-radius:40px;
+ font-size:14px;
+ font-weight:500;
+ border:1px solid #e6dfd6;
+ transition:.3s;
+ cursor:pointer;
+}
+nav a:hover{
+ background:var(--gold);
+ color:white;
+ transform:scale(1.05);
+}
+/* HERO */
 .hero{
  text-align:center;
  padding:80px 20px;
@@ -50,15 +70,18 @@ nav a:hover{color:var(--gold)}
  color:var(--gold);
  font-size:2.5rem;
 }
-.hero p{margin:15px 0 30px}
+.hero p{
+ margin:15px 0 30px;
+}
 .btn{
  background:var(--gold);
  color:white;
- padding:12px 30px;
- border-radius:30px;
+ padding:14px 35px;
+ border-radius:40px;
  text-decoration:none;
  border:none;
  cursor:pointer;
+ font-size:15px;
 }
 section{
  max-width:1200px;
@@ -90,8 +113,13 @@ h3.section-title{
  height:220px;
  object-fit:cover;
 }
-.card div{padding:20px}
-.price{font-weight:600;margin:10px 0}
+.card div{
+ padding:20px;
+}
+.price{
+ font-weight:600;
+ margin:10px 0;
+}
 /* FORM */
 form{
  max-width:500px;
@@ -99,12 +127,16 @@ form{
 }
 input,textarea,select{
  width:100%;
- padding:12px;
+ padding:14px;
  margin-bottom:15px;
- border-radius:10px;
+ border-radius:15px;
  border:1px solid #ddd;
+ font-family:'Poppins',sans-serif;
 }
-textarea{resize:none;height:120px}
+textarea{
+ resize:none;
+ height:120px;
+}
 footer{
  text-align:center;
  padding:30px;
@@ -114,6 +146,26 @@ footer{
 /* SPA */
 .page{display:none}
 .page.active{display:block}
+/* ===== MOBILE ===== */
+@media (max-width:768px){
+ header{
+ flex-direction:column;
+ gap:15px;
+ }
+ nav a{
+ font-size:13px;
+ padding:10px 16px;
+ }
+ .hero{
+ padding:50px 15px;
+ }
+ .hero h2{
+ font-size:1.8rem;
+ }
+ .grid{
+ grid-template-columns:1fr;
+ }
+}
 </style>
 </head>
 <body>
@@ -121,12 +173,11 @@ footer{
  <h1>Doce Fio</h1>
  <nav>
  <a onclick="showPage('home')">Início</a>
+ <a onclick="showPage('roupas')">Peças de roupas</a>
  <a onclick="showPage('bolsas')">Bolsas</a>
- <a onclick="showPage('roupas')">Roupas</a>
- <a onclick="showPage('tapetes')">Tapetes</a>
- <a onclick="showPage('sousplats')">Sousplats</a>
  <a onclick="showPage('personalizados')">Personalizados</a>
- <a onclick="showPage('encomendas')">Encomendas</a>
+ <a onclick="showPage('sousplats')">Jogo americano</a>
+ <a onclick="showPage('encomendas')">Fazer encomenda</a>
  </nav>
 </header>
 <!-- HOME -->
@@ -137,67 +188,51 @@ footer{
  <button class="btn" onclick="showPage('encomendas')">Fazer encomenda</button>
  </div>
 </div>
-<!-- CATEGORIAS -->
+<!-- ROUPAS -->
+<div id="roupas" class="page">
+<section>
+<h3 class="section-title">Peças de Roupas</h3>
+<div class="grid">
+ <div class="card"><img src="https://via.placeholder.com/600x600"><div><h4>Crochê</h4></div>
+</div>
+ <div class="card"><img src="https://via.placeholder.com/600x600"><div><h4>Crochê</h4></div>
+</div>
+ <div class="card"><img src="https://via.placeholder.com/600x600"><div><h4>Crochê</h4></div>
+</div>
+ <div class="card"><img src="https://via.placeholder.com/600x600"><div><h4>Crochê</h4></div>
+</div>
+ <div class="card"><img src="https://via.placeholder.com/600x600"><div><h4>Crochê</h4></div>
+</div>
+</div>
+</section>
+</div>
+<!-- BOLSAS -->
 <div id="bolsas" class="page">
 <section>
 <h3 class="section-title">Bolsas</h3>
 <div class="grid">
- <div class="card">
- <img src="https://via.placeholder.com/600x600?text=Bolsa">
- <div>
- <h4>Bolsa em Crochê</h4>
- <div class="price">R$ 120,00</div>
- <button class="btn" onclick="showPage('encomendas')">Encomendar</button>
- </div>
- </div>
+ <div class="card"><img src="https://via.placeholder.com/600x600"></div>
+ <div class="card"><img src="https://via.placeholder.com/600x600"></div>
+ <div class="card"><img src="https://via.placeholder.com/600x600"></div>
+ <div class="card"><img src="https://via.placeholder.com/600x600"></div>
+ <div class="card"><img src="https://via.placeholder.com/600x600"></div>
 </div>
 </section>
 </div>
-<div id="roupas" class="page">
-<section>
-<h3 class="section-title">Roupas</h3>
-<div class="grid">
- <div class="card">
- <img src="https://via.placeholder.com/600x600?text=Cropped">
- <div>
- <h4>Cropped em Crochê</h4>
- <div class="price">R$ 85,00</div>
- <button class="btn" onclick="showPage('encomendas')">Encomendar</button>
- </div>
- </div>
-</div>
-</section>
-</div>
-<div id="tapetes" class="page">
-<section>
-<h3 class="section-title">Tapetes</h3>
-<div class="grid">
- <div class="card">
- <img src="https://via.placeholder.com/600x600?text=Tapete">
- <div>
- <h4>Tapete Artesanal</h4>
- <div class="price">R$ 90,00</div>
- <button class="btn" onclick="showPage('encomendas')">Encomendar</button>
- </div>
- </div>
-</div>
-</section>
-</div>
+<!-- JOGO AMERICANO -->
 <div id="sousplats" class="page">
 <section>
-<h3 class="section-title">Sousplats</h3>
+<h3 class="section-title">Jogo Americano</h3>
 <div class="grid">
- <div class="card">
- <img src="https://via.placeholder.com/600x600?text=Sousplat">
- <div>
- <h4>Sousplat</h4>
- <div class="price">R$ 35,00</div>
- <button class="btn" onclick="showPage('encomendas')">Encomendar</button>
- </div>
- </div>
+ <div class="card"><img src="https://via.placeholder.com/600x600"></div>
+ <div class="card"><img src="https://via.placeholder.com/600x600"></div>
+ <div class="card"><img src="https://via.placeholder.com/600x600"></div>
+ <div class="card"><img src="https://via.placeholder.com/600x600"></div>
+ <div class="card"><img src="https://via.placeholder.com/600x600"></div>
 </div>
 </section>
 </div>
+<!-- PERSONALIZADOS -->
 <div id="personalizados" class="page">
 <section>
 <h3 class="section-title">Personalizados</h3>
@@ -211,10 +246,9 @@ footer{
 <form onsubmit="sendWhats(event)">
  <input id="nome" placeholder="Seu nome" required>
  <select id="produto">
- <option>Bolsas</option>
  <option>Roupas</option>
- <option>Tapetes</option>
- <option>Sousplats</option>
+ <option>Bolsas</option>
+ <option>Jogo Americano</option>
  <option>Personalizados</option>
  </select>
  <textarea id="msg" placeholder="Detalhes do pedido"></textarea>
@@ -223,7 +257,7 @@ footer{
 </section>
 </div>
 <footer>
-📍 Buriti Bravo – MA • Instagram: @_doce.fio <br>
+ Buriti Bravo – MA • Instagram: @_doce.fio <br>
 © Doce Fio – Crochê Artesanal
 </footer>
 <script>
